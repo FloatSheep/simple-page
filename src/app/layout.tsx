@@ -7,6 +7,7 @@ import {
   createLightTheme,
   createDarkTheme,
   BrandVariants,
+  makeStyles,
 } from "@fluentui/react-components";
 
 import { themeToken } from "@/config/customTheme";
@@ -43,16 +44,23 @@ const darkTheme: Theme = {
 darkTheme.colorBrandForeground1 = customTheme[110];
 darkTheme.colorBrandForeground2 = customTheme[120];
 
+const theStyle = makeStyles({
+  provider: {
+    backgroundColor: "transparent",
+  }
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const styles = theStyle();
   return (
-    <html lang="en" className="h-full">
-      <body className="flex flex-col min-h-screen">
-        <div id="global-background" className="flex-1"></div>
-        <FluentProvider theme={lightTheme} className="p-8">
+    <html lang="en">
+      <body>
+        <div id="global-background"></div>
+        <FluentProvider theme={lightTheme} className={styles.provider}>
           {children}
         </FluentProvider>
       </body>
