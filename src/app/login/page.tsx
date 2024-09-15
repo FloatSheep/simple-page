@@ -8,7 +8,7 @@ import {
   Button,
   useId,
 } from "@fluentui/react-components";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { CacheManager } from "@floatsheep/cachemanager";
 import MessageComponent, { MessageBarHandle } from "@/components/messageBar";
 import { useRouter } from "next/navigation";
@@ -45,11 +45,30 @@ export default function Login() {
   const handleClick = async () => {
     if (
       !refCollection.username.current?.value ||
+      !refCollection.password.current?.value ||
+      !refCollection.username.current?.value
+        .split("")
+        .filter((e) => e != " ")
+        .pop() ||
       !refCollection.password.current?.value
+        .split("")
+        .filter((e) => e != " ")
+        .pop()
     ) {
       refCollection.messageBar.current?.addMessage(
         "错误",
         "用户名或密码为空",
+        "error"
+      );
+
+      return;
+    } else if (
+      refCollection.username.current?.value.includes(" ") ||
+      refCollection.password.current?.value.includes(" ")
+    ) {
+      refCollection.messageBar.current?.addMessage(
+        "错误",
+        "用户名或密码包含空格",
         "error"
       );
 
@@ -62,7 +81,7 @@ export default function Login() {
     );
     refCollection.messageBar.current?.addMessage(
       "信息",
-      `登录成功，正在跳转至首页！`,
+      "登录成功，正在跳转至首页！",
       "success"
     );
     setTimeout(() => {
@@ -71,6 +90,22 @@ export default function Login() {
     await cacheManager.init();
     await cacheManager.setItem("login", true);
   };
+
+  useEffect(() => {
+    const checkLoginStatus = async () => {
+      await cacheManager.init();
+      if (await cacheManager.getItem("login")) {
+        refCollection.messageBar.current?.addMessage(
+          "提示",
+          "已登录，正在跳转至首页",
+          "success"
+        );
+        router.push("/");
+      }
+    };
+
+    checkLoginStatus();
+  });
 
   return (
     <>
