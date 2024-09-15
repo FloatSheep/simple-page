@@ -47,7 +47,7 @@ darkTheme.colorBrandForeground2 = customTheme[120];
 const theStyle = makeStyles({
   provider: {
     backgroundColor: "transparent",
-  }
+  },
 });
 
 export default function RootLayout({
