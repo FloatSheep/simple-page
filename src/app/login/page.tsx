@@ -89,6 +89,7 @@ export default function Login() {
             <Input
               aria-label="用户名"
               placeholder="用户名"
+              autoComplete="false"
               id={idCollection.username}
               ref={refCollection.username}
             ></Input>
@@ -101,6 +102,7 @@ export default function Login() {
               type="password"
               aria-label="密码"
               placeholder="密码"
+              autoComplete="false"
               id={idCollection.password}
               ref={refCollection.password}
             ></Input>
