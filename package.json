@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@floatsheep/cachemanager": "^1.0.12",
+    "@floatsheep/cachemanager": "^1.0.13",
     "@fluentui/react-components": "^9.54.15",
     "@fluentui/react-icons": "^2.0.258",
     "lxgw-wenkai-screen-webfont": "^1.7.0",

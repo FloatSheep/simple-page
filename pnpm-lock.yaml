@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@floatsheep/cachemanager':
-        specifier: ^1.0.12
-        version: 1.0.12
+        specifier: ^1.0.13
+        version: 1.0.13
       '@fluentui/react-components':
         specifier: ^9.54.15
         version: 9.54.15(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.23.2)
@@ -100,8 +100,8 @@ packages:
   '@floating-ui/utils@0.2.8':
     resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
 
-  '@floatsheep/cachemanager@1.0.12':
-    resolution: {integrity: sha512-1Wg8KvVC2f+jerjyM4GkHpM/r9pSuz7QE2zT/isv9yB4KWH5E4zuRjjSz3BfF5j6ONhaoXCBbzx315p3wym9TQ==}
+  '@floatsheep/cachemanager@1.0.13':
+    resolution: {integrity: sha512-SSitwLhbK8cSP5OKCHn+h3hMLRZ6+DuePzISqF5evyCEl7K/PxhcnUHMePQJ1av9azO9X3UPaVyyM+2IeHkcaw==}
 
   '@fluentui/keyboard-keys@9.0.7':
     resolution: {integrity: sha512-vaQ+lOveQTdoXJYqDQXWb30udSfTVcIuKk1rV0X0eGAgcHeSDeP1HxMy+OgHOQZH3OiBH4ZYeWxb+tmfiDiygQ==}
@@ -2188,7 +2188,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.8': {}
 
-  '@floatsheep/cachemanager@1.0.12': {}
+  '@floatsheep/cachemanager@1.0.13': {}
 
   '@fluentui/keyboard-keys@9.0.7':
     dependencies:
